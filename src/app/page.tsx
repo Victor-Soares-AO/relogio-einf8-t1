@@ -4,6 +4,8 @@ import { useEffect, useState } from "react";
 import { toZonedTime, format as formatTz } from "date-fns-tz";
 import { ptBR } from 'date-fns/locale/pt-BR';
 import { ModeToggle } from "@/components/mode-toggle";
+import { Timer } from "lucide-react";
+import { Button } from "@/components/ui/button";
 
 export default function Home() {
 
@@ -32,11 +34,12 @@ export default function Home() {
     }, []);
 
     return (
-        <main className="flex flex-col min-h-screen bg-red-500 dark:bg-zinc-950 items-center">
-            <div className="w-1/2">
+        <main className="flex flex-col min-h-screen px-4 md:px-0 bg-red-500 dark:bg-zinc-950 items-center">
+            <div className="w-full lg:w-1/2">
                 <nav className="flex items-center justify-between border-b py-4">
-                    <h1 className="text-white font-semibold text-xl">
-                        Relogio.ao
+                    <h1 className="flex text-white font-semibold text-xl">
+                        <Timer className="mr-2"/>
+                        CurrentTime
                     </h1>
 
                     <ModeToggle />
@@ -47,7 +50,7 @@ export default function Home() {
                         Hora certa
                     </p>
 
-                    <p className="text-8xl font-semibold">
+                    <p className="text-6xl lg:text-8xl font-semibold">
                         {time}
                     </p>
 
